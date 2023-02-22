@@ -44,6 +44,7 @@ $(document).ready(function () {
 });
 
 function appendPlaces (data) {
+  $("section.places").empty();
   data.forEach((place) =>
     $("section.places").append(
     `<article>
