@@ -31,7 +31,7 @@ $(function () {
     } else {
       delete cities[c_id]
     }
-  })
+  });
 
 
   $.get('http://0.0.0.0:5001/api/v1/status/', function (data) {
