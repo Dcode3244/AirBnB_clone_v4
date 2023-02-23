@@ -113,15 +113,15 @@ function successHandler (data) {
   }));
 
 $(`SPAN.show`).click(function () {
-  const review_place_id = $(this).attr('place-id')
-  const user_name = {}
+  const review_place_id = $(this).attr('place-id');
+  const user_name = {};
 
   $.get(`http://0.0.0.0:5001/api/v1/places/${review_place_id}/reviews`, function (data) {
     $(`DIV.reviews#${review_place_id} UL`).append(data.map((review, idx) => {
-    const date = new Date(review.updated_at)
+    const date = new Date(review.updated_at);
     const months = ['Jan', 'Feb', 'Mar', 'Apr',
                     'May', 'June', 'july', 'Aug',
-                    'Sep', 'Oct', 'Nov', 'Dec']
+                    'Sep', 'Oct', 'Nov', 'Dec'];
 
     $.ajax({
       url: `http://0.0.0.0:5001/api/v1/users/${review.user_id}`,
@@ -131,7 +131,7 @@ $(`SPAN.show`).click(function () {
       success: function (data) {
                     user_name[idx] = data.first_name + ' ' + data.last_name;
                }
-    })
+    });
     
   $(`DIV#${review_place_id} H2`).text(`${Object.keys(user_name).length} Reviews`)
   return `<Li>
@@ -143,7 +143,7 @@ $(`SPAN.show`).click(function () {
             <P>${review.text}</P>
           </LI>`
     }))
-  })
-  $(`DIV.reviews#${review_place_id} UL`).toggleClass('hidden')
+  });
+  $(`DIV.reviews#${review_place_id} UL`).toggleClass('hidden');
 })
 }
