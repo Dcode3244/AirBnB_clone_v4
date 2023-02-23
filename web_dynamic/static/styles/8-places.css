@@ -99,3 +99,33 @@
 .user {
   margin-bottom: 1.5%;
 }
+
+.reviews .flex {
+  display: flex;
+}
+
+.flex h2 {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.reviews .hidden {
+  display: none;
+}
+
+.reviews span {
+  border: 1px solid #FF5A5F;
+  margin-right: 1rem;
+  height: 1.5rem;
+  padding: 5px 5px 0 5px;
+}
+
+.reviews span:hover {
+  cursor: pointer;
+  background-color: rgba(255, 90, 95);
+  color: white;
+}
+
+.reviews span:active {
+  transform: scale(0.97);
+}
